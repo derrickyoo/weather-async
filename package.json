@@ -1,0 +1,24 @@
+{
+  "name": "weather-async",
+  "version": "1.0.0",
+  "description": "An asynchronous weather app using [Node.js](https://nodejs.org) and [Google's Geolocation API](https://developers.google.com/maps/documentation/geolocation/intro).",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/derrickyoo/weather-async.git"
+  },
+  "keywords": [],
+  "author": "Derrick Yoo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/derrickyoo/weather-async/issues"
+  },
+  "homepage": "https://github.com/derrickyoo/weather-async#readme",
+  "dependencies": {
+    "dotenv": "^6.1.0",
+    "request": "^2.88.0"
+  }
+}
