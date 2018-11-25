@@ -32,5 +32,12 @@ request({
   url: requestURL,
   json: true
 }, (error, response, body) => {
-  console.log(JSON.stringify(body, undefined, 2));
+  // Prettify the body for readability
+  //console.log(JSON.stringify(body, undefined, 2));
+
+  let results = body['results'][0];
+
+  console.log(`Address: ${results.formatted_address}`);
+  console.log(`Latitude: ${results.geometry.location.lat}`);
+  console.log(`Longitude: ${results.geometry.location.lng}`);
 });
