@@ -1,6 +1,7 @@
 # weather-async
 
-An asynchronous weather app using [Node.js](https://nodejs.org) and [Google's Geolocation API](https://developers.google.com/maps/documentation/geolocation/intro).
+An asynchronous weather app using [Node.js](https://nodejs.org),  [Google Maps Platform](https://developers.google.com/maps/documentation/), and
+[Dark Sky API](https://darksky.net/dev).
 
 ## Running Locally
 
@@ -12,10 +13,17 @@ cd weather-async
 npm install
 ```
 
-In order to query the Google Maps API, you will need to register 
-[Google Maps Platform](https://developers.google.com/maps/documentation/) and
-add the `API_KEY` to a `.env` file within the project. **See `.env.example` for
-details.**
+You will need to register for the
+[Google Maps Platform](https://developers.google.com/maps/documentation/) and the
+[Dark Sky API](https://darksky.net/dev).
+
+**Add API keys to a `.env` file within the project directory. See `.env.example` for details.**
+
+```sh
+# Add valid API keys and rename .env.example to .env
+GOOGLE_MAPS_API_KEY="Paste A Valid API_KEY Here"
+DARK_SKY_API_KEY="Paste A Valid API_KEY Here"
+```
 
 ## Commands
 
