@@ -14,13 +14,12 @@ let getForcast = (lat, lng, callback) => {
     url: requestURL,
     json: true
   }, (error, response, body) => {
-    if (error){
-      callback('Unable to connect to Google servers.')
-    } else {
-      console.log(body);
+    if (!error && response.statusCode === 200){
       callback(undefined, {
-
+        temperature: body.currently.temperature
       });
+    } else {
+      callback('Unable to fetch weather.')
     }
   });
 }
