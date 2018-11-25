@@ -26,11 +26,12 @@ geocode.geocodeAddress(argv.address, (error, results) => {
     console.log(error);
   } else {
     console.log(results.address);
-    forcast.getWeather(results.latitude, results.longitude, (error, results) => {
+    forcast.getWeather(results.latitude, results.longitude, (error, weatherResults) => {
       if (error) {
         console.log(error);
       } else {
-        console.log(JSON.stringify(results, undefined, 2));
+        console.log(`It is currently ${weatherResults.temperature}.`);
+        console.log(`It feels like ${weatherResults.apparentTemperature}.`);
       }
     });
   }
