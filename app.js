@@ -32,12 +32,15 @@ request({
   url: requestURL,
   json: true
 }, (error, response, body) => {
-  // Prettify the body for readability
-  //console.log(JSON.stringify(body, undefined, 2));
-
-  let results = body['results'][0];
-
-  console.log(`Address: ${results.formatted_address}`);
-  console.log(`Latitude: ${results.geometry.location.lat}`);
-  console.log(`Longitude: ${results.geometry.location.lng}`);
+  if (error){
+   console.log('Unable to connect to Google servers.') 
+  } else if (body.status === 'ZERO_RESULTS') {
+    console.log('Unable to find the address.')
+  } else if (body.status === 'OK') {
+    let results = body['results'][0];
+  
+    console.log(`Address: ${results.formatted_address}`);
+    console.log(`Latitude: ${results.geometry.location.lat}`);
+    console.log(`Longitude: ${results.geometry.location.lng}`);
+  }
 });
