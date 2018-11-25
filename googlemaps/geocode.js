@@ -9,8 +9,6 @@ const GOOGLE_MAPS_API_KEY = process.env.GOOGLE_MAPS_API_KEY
 
 let geocodeAddress = (address, callback) => {
   let encodedAddress = encodeURIComponent(address);
-  console.log(encodedAddress);
-  
   let requestURL = `https://maps.googleapis.com/maps/api/geocode/json?key=${GOOGLE_MAPS_API_KEY}&address=${encodedAddress}`; 
   
   request({

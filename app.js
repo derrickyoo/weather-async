@@ -17,21 +17,21 @@ const argv = yargs
   .alias('help', 'h')
   .argv;
 
+console.log('---')
 console.log(argv);
+console.log('---')
 
 geocode.geocodeAddress(argv.address, (error, results) => {
   if (error) {
     console.log(error);
   } else {
-    console.log(JSON.stringify(results, undefined, 2));
-  }
-});
-
-// TODO: Take in lat and lng from geocodeAddress
-forcast.getWeather(32.2226066, -110.9747108, (error, results) => {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log(JSON.stringify(results, undefined, 2));
+    console.log(results.address);
+    forcast.getWeather(results.latitude, results.longitude, (error, results) => {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log(JSON.stringify(results, undefined, 2));
+      }
+    });
   }
 });
