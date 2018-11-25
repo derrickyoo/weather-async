@@ -1,4 +1,4 @@
-console.log('Starting app in development mode');
+console.log('Starting app-dev.js');
 
 const yargs = require('yargs');
 const exampleData = require('./googleapis-example.json');
