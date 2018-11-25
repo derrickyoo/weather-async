@@ -1,4 +1,4 @@
-console.log('Starting async-basics.js');
+console.log('Starting playground/async-basics.js');
 
 setTimeout(() => {
   console.log('Inside callback');

@@ -1,4 +1,4 @@
-console.log('Starting callbacks.js');
+console.log('Starting playground/callbacks.js');
 
 let getUser = (id, callback) => {
   let user = {

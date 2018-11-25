@@ -2,7 +2,7 @@ console.log('Starting app.js');
 
 const yargs = require('yargs');
 
-const geocode = require('./geocode/geocode');
+const geocode = require('./googlemaps/geocode');
 const argv = yargs
   .options({
     address: {

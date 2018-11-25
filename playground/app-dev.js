@@ -1,7 +1,7 @@
-console.log('Starting app-dev.js');
+console.log('Starting playground/app-dev.js');
 
 const yargs = require('yargs');
-const exampleData = require('../geocode/geocode-example.json');
+const exampleData = require('../googlemaps/geocode-example.json');
 
 const argv = yargs
   .options({

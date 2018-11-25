@@ -1,4 +1,4 @@
-console.log('Starting geocode/geocode.js');
+console.log('Starting googlemaps/geocode.js');
 
 const request = require('request');
 const dotenv = require('dotenv');
