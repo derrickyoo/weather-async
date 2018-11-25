@@ -7,7 +7,7 @@ dotenv.load();
 
 const DARK_SKY_API_KEY = process.env.DARK_SKY_API_KEY;
 
-let getForcast = (lat, lng, callback) => {
+let getWeather = (lat, lng, callback) => {
   let requestURL = `https://api.darksky.net/forecast/${DARK_SKY_API_KEY}/${lat},${lng}`;
 
   request({
@@ -24,12 +24,4 @@ let getForcast = (lat, lng, callback) => {
   });
 }
 
-getForcast(32.2226066, -110.9747108, (error, results) => {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log(JSON.stringify(results, undefined, 2));
-  }
-});
-
-module.exports = { getForcast };
+module.exports = { getWeather };
