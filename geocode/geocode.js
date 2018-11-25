@@ -7,7 +7,7 @@ dotenv.load();
 
 const GOOGLE_MAPS_API_KEY = process.env.GOOGLE_MAPS_API_KEY
 
-let geocodeAddress = (address) => {
+let geocodeAddress = (address, callback) => {
   let encodedAddress = encodeURIComponent(address);
   console.log(encodedAddress);
   
@@ -18,17 +18,17 @@ let geocodeAddress = (address) => {
     json: true
   }, (error, response, body) => {
     if (error){
-     console.log('Unable to connect to Google servers.') 
+      callback('Unable to connect to Google servers.')
     } else if (body.status === 'ZERO_RESULTS') {
-      console.log('Unable to find the address.')
+      callback('Address not found.')
     } else if (body.status === 'OK') {
-      let results = body['results'][0];
-    
-      console.log(`Address: ${results.formatted_address}`);
-      console.log(`Latitude: ${results.geometry.location.lat}`);
-      console.log(`Longitude: ${results.geometry.location.lng}`);
+      callback(undefined, {
+        address: body.results[0].formatted_address,
+        latitude: body.results[0].geometry.location.lat,
+        longitude: body.results[0].geometry.location.lng
+      });
     }
   });
 }
-  
+
 module.exports = { geocodeAddress };
