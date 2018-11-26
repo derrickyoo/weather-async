@@ -1,3 +1,4 @@
+console.log('Starting playground/promises.js');
 
 // Example 1
 let somePromise = new Promise((resolve, reject) => {
@@ -27,6 +28,6 @@ let asyncAdd = (a, b) => {
 
 asyncAdd(2, 3).then((res) => {
   console.log(res);
-}, (errorMsg) => {
+}).catch((errorMsg) => {
   console.log(errorMsg)
 });
